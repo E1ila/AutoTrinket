@@ -1,0 +1,12 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\..\FrameXML\UI.xsd">
+    <Script File="AutoTrinket.lua"/>
+    <Frame name="AutoTrinketFrame">
+        <Scripts>
+            <OnLoad>AutoTrinket_OnLoad()</OnLoad>
+            <OnUpdate>AutoTrinket_OnUpdate()</OnUpdate>
+            <OnEvent>AutoTrinket_OnEvent(event, arg1)</OnEvent>
+        </Scripts>
+    </Frame>
+</Ui>

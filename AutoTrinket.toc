@@ -1,0 +1,7 @@
+## Interface: 11200
+## Author: E1ila
+## Title: AutoTrinket
+## Notes: Automatically equips trinkets according to cooldown remaining for maximum benefit
+## SavedVariables: Trinkets, Enabled
+AutoTrinket.lua
+AutoTrinket.xml
