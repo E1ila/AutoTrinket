@@ -19,15 +19,15 @@ end
 
 local function GetTrinkets() 
 	local playerName = UnitName"player"
-	return Trinkets[playerName]
+	local trinkets = Trinkets[playerName]
+	if not Trinkets[playerName] then 
+		trinkets = {}
+		Trinkets[playerName] = trinkets
+	end 
+	return trinkets
 end 
 
 function AutoTrinket_OnLoad()
-	local playerName = UnitName"player"
-	if not Trinkets[playerName] then 
-		Trinkets[playerName] = {}
-	end 
-
 	SLASH_AutoTrinket1 = "/at"
     SlashCmdList["AutoTrinket"] = AutoTrinket_Main
 
@@ -40,16 +40,9 @@ end
 function AutoTrinket_OnEvent(event, arg1)
 	if not Enabled then return end 
 
-	if event == "PLAYER_TARGET_CHANGED" then
-		local name = UnitName'target'
-		if name then 
-			-- print("|cFFFF962F AutoTrinket |rTarget changed " .. UnitName'target')
-		else 
-			-- print("|cFFFF962F AutoTrinket |rDeselected target.")
-		end 
-	elseif event == "PLAYER_LEAVE_COMBAT" then
+	if event == "PLAYER_LEAVE_COMBAT" then
+		-- print("|cFFFF962F AutoTrinket |rOut of combat")
 		AutoTrinket_Switch()
-		-- print("|cFFFF962F AutoTrinket |rLeave combat.")
 	end
 end
 
